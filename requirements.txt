@@ -1,0 +1,3 @@
+discordwebhook
+requests
+python-dotenv
