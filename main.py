@@ -21,13 +21,11 @@ def sendDiscordChannelMessage(message):
     discord.post(content=message)
 
 def checkf():
-    global result 
     site = get(f"{url}/addresses/{kaspa_wallet_address}/balance")
-    result = loads(site.text)["balance"] / 100000000
-    if site.status_code == 200: pass
-    else:
+    if site.status_code != 200:
         print("Error occured when querying wallet address!")
         sys.exit(1)
+    else: global result; result = loads(site.text)["balance"] / 100000000
 
 
 cachedBalance = 0
