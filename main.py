@@ -80,20 +80,19 @@ while True:
     1. Main Wallet (The address of 'this wallet')
     2. Receive Wallet (another address)''')
     selection = input("Enter a Number: ")
-    match selection:
-        case '1'|'01':
-            print('Querying wallet...')
-            checkf()
-            mainfunction()
-            cachedBalance = currentBalance
-            print("Please wait a minute..." if minutes == 1 or minutes == "1" else f"Please wait for {minutes} minutes...")
-            sleep(int(minutes) * 60)
-        case '2'|'02':
-            checkf()
-            check_Receive_Wallet()
-            receive_wallet_function()
-            rwcachedBalance = rwbalance
-            print("Please wait a minute..." if minutes == 1 or minutes == "1" else f"Please wait for {minutes} minutes...")
-            sleep(int(minutes) * 60)
-        case _:
-            print("No match found!\n\n\n")
+    if selection == "1" or selection == "01":
+        print('Querying wallet...')
+        checkf()
+        mainfunction()
+        cachedBalance = currentBalance
+        print("Please wait a minute..." if minutes == 1 or minutes == "1" else f"Please wait for {minutes} minutes...")
+        sleep(int(minutes) * 60)
+    elif selection == '2' or selection == '02':
+        checkf()
+        check_Receive_Wallet()
+        receive_wallet_function()
+        rwcachedBalance = rwbalance
+        print("Please wait a minute..." if minutes == 1 or minutes == "1" else f"Please wait for {minutes} minutes...")
+        sleep(int(minutes) * 60)
+    else:
+        print("No match found!\n\n\n")
