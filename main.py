@@ -91,7 +91,10 @@ while True:
         checkf()
         check_Receive_Wallet()
         receive_wallet_function()
-        rwcachedBalance = rwbalance
+        try:
+            rwcachedBalance = rwbalance
+        except NameError:
+            pass
         print("Please wait a minute..." if minutes == 1 or minutes == "1" else f"Please wait for {minutes} minutes...")
         sleep(int(minutes) * 60)
     else:
